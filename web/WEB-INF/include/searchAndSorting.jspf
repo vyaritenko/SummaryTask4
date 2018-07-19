@@ -1,0 +1,30 @@
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
+<%@ page pageEncoding="UTF-8" %>
+<form action="/controller" method="post">
+    <input type="hidden" name="command" value="loadingEdition"/>
+    <p>
+        <input type="search" name="searchEdition" maxlength="100" placeholder="<fmt:message key="index_jsp.placeholder.search"/>"/>&nbsp;
+        <input type="submit" value="<fmt:message key="index_jsp.form.submit_search"/>"/>&nbsp;
+    </p>
+</form>
+
+<form action="/controller" method="post">
+    <input type="hidden" name="command" value="loadingEdition">
+    <fmt:message key="index_jsp.label.sorting"/>: &nbsp;
+    <select name="selectSorting" size="1">
+        <option value="Не выбрано"><fmt:message key="index_jsp.sorting_option.not_selected"/></option>
+        <option value="От дешовых"><fmt:message key="index_jsp.sorting_option.price_from_cheap_to_expensive"/></option>
+        <option value="От догорих"><fmt:message key="index_jsp.sorting_option.price_from_expensive_to_cheap"/></option>
+        <option value="По алфавиту"><fmt:message key="index_jsp.sorting_option.from_A_to_Z"/></option>
+        <option value="Против алфавита"><fmt:message key="index_jsp.sorting_option.from_Z_to_A"/></option>
+    </select>&nbsp;
+    <fmt:message key="index_jsp.label.topic"/>: &nbsp;
+    <select name="selectTopic" size="1">
+        <option value="Все категории"><fmt:message key="index_jsp.label.topic_option.all_categories"/></option>
+        <option value="Газета"><fmt:message key="index_jsp.label.topic_option.newspaper"/></option>
+        <option value="Глянцевый журнал"><fmt:message key="index_jsp.label.topic_option.glossy_magazine"/></option>
+        <option value="Научный журнал"><fmt:message key="index_jsp.label.topic_option.science_magazine"/></option>
+        <option value="Литературный журнал"><fmt:message key="index_jsp.label.topic_option.literary_magazine"/></option>
+    </select>&nbsp;
+    <input type="submit" value="<fmt:message key="index_jsp.form.submit_choose"/>">&nbsp;
+</form>&nbsp;
